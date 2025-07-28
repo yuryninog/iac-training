@@ -1,8 +1,5 @@
-resource "local_file" "foo" {
-  content   = "Hello World!"
-  filename  = "delete_me.txt"
-}
-
-output "filename" {
-  value   = local_file.foo.filename
-}
+    resource "null_resource" "run_python_script" {
+      provisioner "local-exec" {
+        command = "python3 script.py" # Replace 'your_script.py' with your script's name
+      }
+    }
